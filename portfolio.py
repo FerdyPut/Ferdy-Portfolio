@@ -35,7 +35,7 @@ st.markdown(
     </style>
 
     <div class="profile-container">
-      <img src="https://raw.githubusercontent.com/FerdyPut/Ferdy-Portfolio/foto.jpeg" class="profile-pic">
+     <img src="https://raw.githubusercontent.com/FerdyPut/Ferdy-Portfolio/main/foto.jpeg" class="profile-pic">
         <div class="main-title">Portofolio Ferdy</div>
     </div>
     """,
