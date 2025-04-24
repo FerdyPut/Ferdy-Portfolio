@@ -20,9 +20,9 @@ st.markdown(
     }
 
     .profile-pic {
-        width: 90px;
-        height: 90px;
-        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
         object-fit: cover;
         animation: rotatePhoto 8s linear infinite;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -31,16 +31,19 @@ st.markdown(
     .main-title {
         font-size: 2em;
         font-weight: bold;
+        font-family: Arial, sans-serif;
+        color: #C5172E;  /* Ganti dengan warna yang kamu suka */
     }
     </style>
 
     <div class="profile-container">
-     <img src="https://raw.githubusercontent.com/FerdyPut/Ferdy-Portfolio/main/foto.jpeg" class="profile-pic">
-        <div class="main-title">Portofolio Ferdy</div>
+        <img src="https://raw.githubusercontent.com/FerdyPut/Ferdy-Portfolio/refs/heads/main/foto.jpeg?token=GHSAT0AAAAAADAOB3JNJWYPFTFEXRSVKNOG2AKGLOQ" class="profile-pic">
+        <div class="main-title">Welcome to My Portfolio! </div>
     </div>
     """,
     unsafe_allow_html=True
 )
+
 
 # === Session State ===
 if "main_menu" not in st.session_state:
@@ -49,7 +52,34 @@ if "sub_menu" not in st.session_state:
     st.session_state.sub_menu = ""
 
 # === SIDEBAR ===
-st.sidebar.title("Navigasi")
+
+st.sidebar.markdown(
+    """
+    <style>
+    .sidebar-title {
+        font-size: 12px;  /* Ukuran font kecil */
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+        color: black;  /* Warna hitam */
+        display: flex;
+        align-items: center;
+        gap: 10px;  /* Jarak antara ikon dan teks */
+        margin-bottom: -20px;
+    }
+
+    .menu-logo {
+        font-size: 18px;  /* Ukuran ikon logo */
+    }
+    </style>
+
+    <div class="sidebar-title">
+        <span class="menu-logo">🔽</span>  <!-- Menambahkan emoji sebagai ikon -->
+        Menu My Portfolio!
+    </div>
+    <hr>
+    """,
+    unsafe_allow_html=True
+)
 
 if st.sidebar.button("Tentang Saya"):
     st.session_state.main_menu = "Tentang Saya"
