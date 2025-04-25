@@ -4,20 +4,26 @@ def tampilkan_tentang_saya():
     st.title("👋 Tentang Saya")
     st.success("Ini adalah menu bagian perkenalan mengenai saya secara menyeluruh")
 
-    tab1, tab2, tab3,tab4 = st.tabs(["Profil Saya", "Pendidikan" , "Pengalaman", "Sertifikat"])
+    tab1, tab2, tab3,tab4, tab5 = st.tabs(["Profil Saya", "Pendidikan" , "Pengalaman", "Sertifikat", "Skills"])
 
     with tab1:
-        st.write("""
-            Halo semuanya! Perkenalkan, saya Ferdyansyah Permana Putra aka **Ferdy**, lulusan dari program studi Statistika Bisnis di Institut Teknologi Sepuluh Nopember (ITS). 
-            Saya memiliki ketertarikan dan semangat yang besar di bidang **Data Analyst/Data Scientist**, terutama dalam mengeksplorasi data, membangun insight yang berdampak, 
-            serta menyajikannya melalui visualisasi yang informatif untuk mendukung proses **pengambilan keputusan strategis**.
+        col1, col2 = st.columns([1, 2])  # proporsi bisa diubah sesuai keinginan
 
-            **Saat ini**, saya sedang memperdalam kemampuan saya melalui program bootcamp di **DIBIMBING.ID (Full Stack Data Scientist)**, 
-            sebagai bagian dari upaya saya untuk terus berkembang di dunia data terutama Data Analyst/Data Scientist.
-            
-                 
-        """)
+        with col1:
+            st.image(
+                "https://www.dropbox.com/scl/fi/a8phjdi8h4ifye0q1lbw1/IMJ09756-2.jpg?rlkey=9vtaxvh5frj8acaxowcxoppqn&st=5v4yb10i&raw=1",
+                width=200  # ukuran gambar bisa disesuaikan
+            )
 
+        with col2:
+            st.write("""
+                Halo semuanya! Perkenalkan, saya Ferdyansyah Permana Putra aka **Ferdy**, lulusan dari program studi Statistika Bisnis di Institut Teknologi Sepuluh Nopember (ITS).  
+                Saya memiliki ketertarikan dan semangat yang besar di bidang **Data Analyst/Data Scientist**, terutama dalam mengeksplorasi data, membangun insight yang berdampak,  
+                serta menyajikannya melalui visualisasi yang informatif untuk mendukung proses **pengambilan keputusan strategis**.
+
+                **Saat ini**, saya sedang memperdalam kemampuan saya melalui program bootcamp di **DIBIMBING.ID (Full Stack Data Scientist)**,  
+                sebagai bagian dari upaya saya untuk terus berkembang di dunia data terutama Data Analyst/Data Scientist.
+            """)
         st.markdown(
             """
             <div style="display: flex; justify-content: center;">
@@ -428,6 +434,9 @@ def tampilkan_tentang_saya():
                 unsafe_allow_html=True
             )
             st.markdown("<hr>", unsafe_allow_html=True)
+
+        with tab5:
+            st.write("### Skills/Keterampilan")
     if st.button("⬅️ Back to Home"):
         st.session_state.clear()  # Reset semua session_state
         st.rerun()  # Reload ulang app biar tampil dari awal
