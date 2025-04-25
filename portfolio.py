@@ -89,6 +89,8 @@ if "tampilkan_halaman_umum" not in st.session_state:
     st.session_state.tampilkan_halaman_umum = True  # Menyimpan status untuk menampilkan halaman umum
 if "show_intro" not in st.session_state:
     st.session_state.show_intro = True
+if "sub_sub_menu" not in st.session_state:
+    st.session_state.sub_sub_menu = ""  # handle hierarchy
 
 # Mengecek dan menampilkan Halaman Umum hanya pada pemuatan pertama kali
 if st.session_state.tampilkan_halaman_umum:
@@ -127,61 +129,69 @@ st.sidebar.markdown(
     unsafe_allow_html=True
 )
 
+
 if st.sidebar.button("👥 Tentang Saya"):
     st.session_state.main_menu = "Tentang Saya"
     st.session_state.sub_menu = ""
+    st.session_state.sub_sub_menu = ""  # Reset sub-sub-menu
 
 if st.sidebar.button(":chart_with_upwards_trend: Portofolio Project"):
     st.session_state.main_menu = "Portofolio Project"
-
+    st.session_state.sub_menu = ""  # Make sure sub_menu is reset when clicking "Portofolio Project"
+    st.session_state.sub_sub_menu = ""  # Reset sub-sub-menu
+    
 if st.session_state.main_menu == "Portofolio Project":
     with st.sidebar:
         col1, col2 = st.columns([0.2, 0.8])
         with col2:
-            if st.button("📊 Data Analyst"):
-                st.session_state.sub_menu = "Data Analyst"
+            if st.button("📊 Data Analyst - Exploratory Data Analysis "):
+                st.session_state.sub_menu = "Data Analyst - Exploratory Data Analysis"
+                st.session_state.sub_sub_menu = ""  # Reset sub-sub-menu when sub-menu is selected
             if st.button("🤖 Machine Learning"):
                 st.session_state.sub_menu = "Machine Learning"
+                st.session_state.sub_sub_menu = ""  # Reset sub-sub-menu
 
 if st.sidebar.button(" :email: Kontak Saya"):
     st.session_state.main_menu = "Kontak Saya"
-    st.session_state.sub_menu = ""
+    st.session_state.sub_menu = ""  # Reset sub-menu
+    st.session_state.sub_sub_menu = ""  # Reset sub-sub-menu
 
 
-
-
-# === MAIN CONTENT ===
+# MAIN CONTENT DISPLAY BASED ON SELECTED MENUS
 if st.session_state.main_menu == "Tentang Saya":
     import tentang_saya
     tentang_saya.tampilkan_tentang_saya()
 
-
 elif st.session_state.main_menu == "Portofolio Project":
-    import portofolio
-    portofolio.tampilkan_porto()
+    # Show the main content for Portofolio Project only if no sub-menu is selected
+    if st.session_state.sub_menu == "":
+        import portofolio
+        portofolio.tampilkan_porto()
 
-    if st.session_state.sub_menu == "Data Analyst":
-        st.subheader("📊 Portofolio: Data Analyst")
-        st.write("Berisi contoh project dashboard, eksplorasi data, dan laporan berbasis analisis.")
+    # Show content for Data Analyst sub-menu
+    elif st.session_state.sub_menu == "Data Analyst - Exploratory Data Analysis":
+        import eda
+        eda.tampilkan_eda()
+ 
 
-        # Menambahkan sub-sub menu di bawah Data Analyst
-        data_analyst_sub_menu = st.selectbox(
-            "Pilih Sub-Menu Data Analyst", 
-            ["Dashboard", "Eksplorasi Data", "Laporan Berbasis Analisis"]
-        )
-
-        if data_analyst_sub_menu == "Dashboard":
-            st.write("Contoh project dashboard yang telah Anda buat.")
-        elif data_analyst_sub_menu == "Eksplorasi Data":
-            st.write("Contoh project eksplorasi data yang telah Anda lakukan.")
-        elif data_analyst_sub_menu == "Laporan Berbasis Analisis":
-            st.write("Contoh laporan berbasis analisis data.")
-    
+    # Show content for Machine Learning sub-menu
     elif st.session_state.sub_menu == "Machine Learning":
         st.subheader("🤖 Portofolio: Machine Learning")
         st.write("Berisi project prediksi churn, klasifikasi, regresi, dan evaluasi model.")
+        
+        # Option to add further sub-sub-menu if required for Machine Learning
+        ml_sub_menu = st.selectbox("Pilih Project Machine Learning", ["Churn Prediction", "Classification", "Regression"])
+        st.session_state.sub_sub_menu = ml_sub_menu  # Set the sub-sub-menu for Machine Learning
+
+        if st.session_state.sub_sub_menu == "Churn Prediction":
+            st.write("Project prediksi churn menggunakan algoritma regresi logistik.")
+        elif st.session_state.sub_sub_menu == "Classification":
+            st.write("Project klasifikasi menggunakan algoritma Random Forest.")
+        elif st.session_state.sub_sub_menu == "Regression":
+            st.write("Project regresi untuk prediksi harga menggunakan regresi linier.")
+
     else:
-        st.info("Silakan pilih salah satu sub menu dari Portofolio Project di sidebar.")
+        st.info("Silakan pilih menu lain di sidebar.")
 
 elif st.session_state.main_menu == "Kontak Saya":
     import kontak_saya
