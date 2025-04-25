@@ -7,25 +7,29 @@ def tampilkan_tentang_saya():
     tab1, tab2, tab3,tab4, tab5 = st.tabs(["Profil Saya", "Pendidikan" , "Pengalaman", "Sertifikat", "Skills"])
 
     with tab1:
-        col1, col2 = st.columns([1, 2])  # proporsi bisa diubah sesuai keinginan
+        col1, col2 = st.columns([1, 4])  # proporsi bisa diubah sesuai keinginan
 
         with col1:
             st.image(
                 "https://www.dropbox.com/scl/fi/a8phjdi8h4ifye0q1lbw1/IMJ09756-2.jpg?rlkey=9vtaxvh5frj8acaxowcxoppqn&st=5v4yb10i&raw=1",
-                width=200  # ukuran gambar bisa disesuaikan
+                width=120  # ukuran gambar bisa disesuaikan
             )
 
         with col2:
-            st.write("""
-                Halo semuanya! Perkenalkan, saya Ferdyansyah Permana Putra aka **Ferdy**, lulusan dari program studi Statistika Bisnis di Institut Teknologi Sepuluh Nopember (ITS).  
-                Saya memiliki ketertarikan dan semangat yang besar di bidang **Data Analyst/Data Scientist**, terutama dalam mengeksplorasi data, membangun insight yang berdampak,  
-                serta menyajikannya melalui visualisasi yang informatif untuk mendukung proses **pengambilan keputusan strategis**.
-
-                **Saat ini**, saya sedang memperdalam kemampuan saya melalui program bootcamp di **DIBIMBING.ID (Full Stack Data Scientist)**,  
-                sebagai bagian dari upaya saya untuk terus berkembang di dunia data terutama Data Analyst/Data Scientist.
-            """)
+            st.markdown("""
+                        <div style='padding-top: 10px; margin-left: -40px; text-align: justify;'>
+                Halo semuanya! Perkenalkan, saya Ferdyansyah Permana Putra aka <b>Ferdy</b>, lulusan dari program studi Statistika Bisnis di Institut Teknologi Sepuluh Nopember (ITS).  
+                Saya memiliki ketertarikan dan semangat yang besar di bidang <b>Data Analyst/Data Scientist</b>, terutama dalam mengeksplorasi data, membangun insight yang berdampak,  
+                serta menyajikannya melalui visualisasi yang informatif untuk mendukung proses <b>pengambilan keputusan strategis</b>.
+                    </div>
+            """, unsafe_allow_html=True)
         st.markdown(
             """
+            <div style='text-align: justify;'>
+            <b>Saat ini</b>, saya sedang memperdalam kemampuan saya melalui program bootcamp di <b>DIBIMBING.ID (Full Stack Data Scientist</b>,  
+                sebagai bagian dari upaya saya untuk terus berkembang di dunia data terutama Data Analyst/Data Scientist.
+            </div>
+            <p>
             <div style="display: flex; justify-content: center;">
                 <img src="https://www.dropbox.com/scl/fi/595juaruen2kqchs2ozh0/Big-Data.jpg?rlkey=te6s30egvw0laktsnk22wvdio&st=bnl1y5sk&raw=1" width="200" />
             </div>
@@ -34,7 +38,8 @@ def tampilkan_tentang_saya():
             unsafe_allow_html=True
         )
 
-        st.write(""" 
+        st.markdown(""" 
+            <div style='text-align: justify;'>
             Passion saya pada bidang data bermula dari rasa ingin tahu yang tinggi terhadap pola, tren, dan bagaimana data dapat digunakan secara efektif untuk mendorong pertumbuhan dan inovasi bisnis. 
             Saya percaya bahwa kekuatan data terletak pada bagaimana kita memahaminya dan menerjemahkannya menjadi aksi yang bernilai.
 
@@ -47,7 +52,8 @@ def tampilkan_tentang_saya():
             Saya selalu terbuka terhadap kolaborasi, tantangan baru, dan kesempatan untuk terus berkembang sebagai seorang Data Analyst/Scientist 
             yang tidak hanya menganalisis data, tetapi juga memberikan nilai strategis dari informasi yang ada. **Sehingga, bisa berkontribusi positif kepada perusahaan nantinya
             dengan informasi yang saya lakukan sebagai Data Analyst/Data Scientist**.
-            """)
+                </div>
+            """, unsafe_allow_html=True)
 
     with tab2:
         st.write("### Pendidikan")
@@ -427,7 +433,7 @@ def tampilkan_tentang_saya():
         with tab4:
             st.write("### Sertifikat dan Penghargaan")
             st.success("Berikut kumpulan sertifikat dan penghargaan selama masa perkuliahan")
-            dropbox_url = "https://www.dropbox.com/scl/fi/eorr58bgzz5t4pbyp7f6k/PORTFOLIO-ENGLISH.pdf?rlkey=u1pka5mu0jtdx0m1hmegg9h19&st=qdjfs64l&raw=1"
+            dropbox_url = "https://www.dropbox.com/scl/fi/twk16n29sms6e9r7p33jb/PORTFOLIO-ENGLISH-1.pdf?rlkey=g1m81m08mn5yo1dah344lgd06&st=wcgmc6mn&raw=1"
 
             st.markdown(
                 f'<iframe src="{dropbox_url}" width="700" height="1000"></iframe>',
@@ -436,7 +442,55 @@ def tampilkan_tentang_saya():
             st.markdown("<hr>", unsafe_allow_html=True)
 
         with tab5:
-            st.write("### Skills/Keterampilan")
+            st.write("### 💼 Skills/Keterampilan")
+            st.markdown("""
+            <style>
+            .skill-box {
+                background-color: white;
+                padding: 10px 15px;
+                margin-bottom: 8px;
+                border-radius: 10px;
+                box-shadow: 1px 2px 5px rgba(0,0,0,0.1);
+                transition: transform 0.2s ease;
+                display: flex;
+                align-items: center;
+            }
+
+            .skill-box:hover {
+                transform: scale(1.02);
+                box-shadow: 2px 4px 10px rgba(0,0,0,0.15);
+            }
+
+            .skill-logo {
+                width: 30px;
+                margin-right: 15px;
+            }
+            </style>
+            """, unsafe_allow_html=True)
+
+            # Isi konten skills
+            skills_with_logos = [
+                ("https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg", "Power BI", "Dashboard dan Analysis (Intermediate)"),
+                ("https://upload.wikimedia.org/wikipedia/commons/4/4c/Looker.svg", "Looker Studio", "Dashboard dan Analysis (Intermediate)"),
+                ("https://upload.wikimedia.org/wikipedia/commons/0/01/Tableau_Software_Logo_Small.png", "Tableau", "Dashboard dan Analysis (Intermediate)"),
+                ("https://www.r-project.org/logo/Rlogo.png", "R Studio", "Dashboard dan Analysis (Intermediate)"),
+                ("https://cdn-icons-png.flaticon.com/512/5968/5968350.png", "Python & Streamlit", "Dashboard, Analysis, dan Web Development (Intermediate)"),
+                ("https://cdn-icons-png.flaticon.com/512/5968/5968342.png", "PostgreSQL", "ETL (Intermediate)"),
+                ("https://upload.wikimedia.org/wikipedia/commons/d/d2/Minitab_Logo.svg", "Minitab", "Analysis (Intermediate)"),
+                ("https://upload.wikimedia.org/wikipedia/commons/7/78/SPSS_An_IBM_Company_logo.svg", "SPSS", "Analysis (Intermediate)"),
+                ("https://cdn-icons-png.flaticon.com/512/732/732221.png", "Microsoft Office", "Word, PowerPoint, Excel (Advanced)"),
+            ]
+
+            # Tampilkan tiap skill dalam box
+            for logo_url, name, desc in skills_with_logos:
+                st.markdown(f"""
+                <div class="skill-box">
+                    <img src="{logo_url}" class="skill-logo">
+                    <div>
+                        <b>{name}</b><br>{desc}
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
     if st.button("⬅️ Back to Home"):
         st.session_state.clear()  # Reset semua session_state
         st.rerun()  # Reload ulang app biar tampil dari awal
