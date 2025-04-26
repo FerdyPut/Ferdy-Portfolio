@@ -47,7 +47,7 @@ def tampilkan_tentang_saya():
                  
             - Menjadi Asisten Dosen di bidang Eksplorasi dan Visualisasi Data (Tahun 2023)
             - Menjadi Asisten Dosen di bidang Statistika Non Parametrik (Tahun 2023)
-            - Magang di PT. Telekomunikasi Indonesia, Tbk. sebagai Data Processing and Visualization
+            - Magang di PT. Telekomunikasi Indonesia, Tbk. sebagai Data Processing and Visualization (2024)
                   
             Saya selalu terbuka terhadap kolaborasi, tantangan baru, dan kesempatan untuk terus berkembang sebagai seorang Data Analyst/Scientist 
             yang tidak hanya menganalisis data, tetapi juga memberikan nilai strategis dari informasi yang ada. **Sehingga, bisa berkontribusi positif kepada perusahaan nantinya
