@@ -34,15 +34,14 @@ def tampilkan_porto():
         </style>
         Pada Menu ini akan menampilkan beberapa project yang telah saya lakukan terkait Data Analyst dan Data Scientist:
         <ul>
-            <li><span class="white-box">1. Hasil Dashboard Looker Studio <span class="check-icon">✔️</span></span></li>
-            <li><span class="white-box">2. Eksploratory Data Analysis on Bootcamp <span class="check-icon">✔️</span></span></li>
-            <li><span class="white-box">3. SQL Project <span class="check-icon">✔️</span></span></li>
-            <li><span class="white-box">4. Scrapping Project <span class="check-icon">✔️</span></span></li>
-            <li><span class="white-box">5. A/B Testing Project <span class="check-icon">✔️</span></span></li>
-            <li><span class="gold-box">6. Dashboard with Power BI <span class="check-icon">✔️</span></span></li>
-            <li><span class="gold-box">7. Hypotesis Testing <span class="check-icon">✔️</span></span></li>
-            <li><span class="gold-box">8. Unsupervised Learning <span class="check-icon">✔️</span></span></li>
-            <li><span class="gold-box">9. Supervised Learning <span class="check-icon">✔️</span></span></li>
-            <li><span class="gold-box">10. Hypertuning of Machine Learning <span class="check-icon">✔️</span></span></li>
+            <li><span class="white-box">1. Exploratory Data Analysis on Bootcamp <span class="check-icon">✔️</span></span></li>
+            <li><span class="white-box">2. SQL Project <span class="check-icon">✔️</span></span></li>
+            <li><span class="white-box">3. Scrapping Project <span class="check-icon">✔️</span></span></li>
+            <li><span class="white-box">4. A/B Testing Project <span class="check-icon">✔️</span></span></li>
+            <li><span class="gold-box">5. Dashboard with Power BI <span class="check-icon">✔️</span></span></li>
+            <li><span class="gold-box">6. Hypotesis Testing <span class="check-icon">✔️</span></span></li>
+            <li><span class="gold-box">7 Unsupervised Learning <span class="check-icon">✔️</span></span></li>
+            <li><span class="gold-box">8 Supervised Learning <span class="check-icon">✔️</span></span></li>
+            <li><span class="gold-box">9. Hypertuning of Machine Learning <span class="check-icon">✔️</span></span></li>
         </ul>
     """, unsafe_allow_html=True)
