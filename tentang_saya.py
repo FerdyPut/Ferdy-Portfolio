@@ -17,7 +17,7 @@ def tampilkan_tentang_saya():
 
         with col2:
             st.markdown("""
-                        <div style='padding-top: 10px; margin-left: -40px; text-align: justify;'>
+                        <div style='padding-top: 10px; margin-left: -20px; text-align: justify;'>
                 Halo semuanya! Perkenalkan, saya Ferdyansyah Permana Putra aka <b>Ferdy</b>, lulusan dari program studi Statistika Bisnis di Institut Teknologi Sepuluh Nopember (ITS).  
                 Saya memiliki ketertarikan dan semangat yang besar di bidang <b>Data Analyst/Data Scientist</b>, terutama dalam mengeksplorasi data, membangun insight yang berdampak,  
                 serta menyajikannya melalui visualisasi yang informatif untuk mendukung proses <b>pengambilan keputusan strategis</b>.
