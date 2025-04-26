@@ -175,3 +175,6 @@ def tampilkan_kontak():
         """,
         unsafe_allow_html=True
     )
+    if st.button("⬅️ Back to Home"):
+        st.session_state.clear()  # Reset semua session_state
+        st.rerun()  # Reload ulang app biar tampil dari awal
