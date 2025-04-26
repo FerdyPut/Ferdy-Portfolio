@@ -179,16 +179,6 @@ elif st.session_state.main_menu == "Portofolio Project":
         st.subheader("🤖 Portofolio: Machine Learning")
         st.write("Berisi project prediksi churn, klasifikasi, regresi, dan evaluasi model.")
         
-        # Option to add further sub-sub-menu if required for Machine Learning
-        ml_sub_menu = st.selectbox("Pilih Project Machine Learning", ["Churn Prediction", "Classification", "Regression"])
-        st.session_state.sub_sub_menu = ml_sub_menu  # Set the sub-sub-menu for Machine Learning
-
-        if st.session_state.sub_sub_menu == "Churn Prediction":
-            st.write("Project prediksi churn menggunakan algoritma regresi logistik.")
-        elif st.session_state.sub_sub_menu == "Classification":
-            st.write("Project klasifikasi menggunakan algoritma Random Forest.")
-        elif st.session_state.sub_sub_menu == "Regression":
-            st.write("Project regresi untuk prediksi harga menggunakan regresi linier.")
 
     else:
         st.info("Silakan pilih menu lain di sidebar.")
