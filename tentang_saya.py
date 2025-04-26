@@ -433,10 +433,10 @@ def tampilkan_tentang_saya():
         with tab4:
             st.write("### Sertifikat dan Penghargaan")
             st.success("Berikut kumpulan sertifikat dan penghargaan selama masa perkuliahan")
-            dropbox_url = "https://www.dropbox.com/scl/fi/twk16n29sms6e9r7p33jb/PORTFOLIO-ENGLISH-1.pdf?rlkey=g1m81m08mn5yo1dah344lgd06&st=wcgmc6mn&raw=1"
+            pdf_url = "https://drive.google.com/file/d/1xq8WzKYtpAgJoV_VkXGpQMO1JrQ9xZa2/preview"
 
             st.markdown(
-                f'<iframe src="{dropbox_url}" width="700" height="1000"></iframe>',
+                f'<iframe src="{pdf_url}" width="700" height="1000"></iframe>',
                 unsafe_allow_html=True
             )
             st.markdown("<hr>", unsafe_allow_html=True)
