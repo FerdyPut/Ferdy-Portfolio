@@ -2,4 +2,4 @@ nbformat
 joblib
 matplotlib
 seaborn
-sklearn
+scikit-learn
