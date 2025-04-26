@@ -1,3 +1,4 @@
 nbformat
 joblib
 matplotlib
+seaborn
