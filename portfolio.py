@@ -147,8 +147,8 @@ if st.session_state.main_menu == "Portofolio Project":
             if st.button("📊 Data Analyst - Exploratory Data Analysis "):
                 st.session_state.sub_menu = "Data Analyst - Exploratory Data Analysis"
                 st.session_state.sub_sub_menu = ""  # Reset sub-sub-menu when sub-menu is selected
-            if st.button("🤖 Machine Learning"):
-                st.session_state.sub_menu = "Machine Learning"
+            if st.button("🤖 Machine Learning - Churn Prediction"):
+                st.session_state.sub_menu = "Machine Learning - Churn Prediction"
                 st.session_state.sub_sub_menu = ""  # Reset sub-sub-menu
 
 if st.sidebar.button(" :email: Kontak Saya"):
@@ -175,10 +175,9 @@ elif st.session_state.main_menu == "Portofolio Project":
  
 
     # Show content for Machine Learning sub-menu
-    elif st.session_state.sub_menu == "Machine Learning":
-        st.subheader("🤖 Portofolio: Machine Learning")
-        st.write("Berisi project prediksi churn, klasifikasi, regresi, dan evaluasi model.")
-        
+    elif st.session_state.sub_menu == "Machine Learning - Churn Prediction":
+        import prediksi
+        prediksi.tampilkan_prediksi()
 
     else:
         st.info("Silakan pilih menu lain di sidebar.")
