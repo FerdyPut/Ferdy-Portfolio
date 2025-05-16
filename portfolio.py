@@ -150,6 +150,9 @@ if st.session_state.main_menu == "Portofolio Project":
             if st.button("🤖 Machine Learning - Churn Prediction"):
                 st.session_state.sub_menu = "Machine Learning - Churn Prediction"
                 st.session_state.sub_sub_menu = ""  # Reset sub-sub-menu
+            if st.button("🤖 Machine Learning - Diabetes Prediction"):
+                st.session_state.sub_menu = "Machine Learning - Diabetes Prediction"
+                st.session_state.sub_sub_menu = ""  # Reset sub-sub-menu
 
 if st.sidebar.button(" :email: Kontak Saya"):
     st.session_state.main_menu = "Kontak Saya"
