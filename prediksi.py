@@ -84,6 +84,7 @@ def tampilkan_prediksi():
                         <p>
                         """, unsafe_allow_html=True)
             
+            #-------------------------------------INI KODE UNTUK NAMPILIN COLAB
             # --------- FILE PATH DARI GITHUB ---------
             NOTEBOOK_PATH = "https://www.dropbox.com/scl/fi/wvpotiswjjjv9vqnqowwo/HW_HPTUNING_Ferdyansyah_Permana_Putra.ipynb?rlkey=wd5wvd9a07s4pl2328ejlcw2i&st=stlhee6m&dl=1"
             DATA_PATH = "https://www.dropbox.com/scl/fi/xu266ivq58vdr9y01bzgo/churn-1.csv?rlkey=fj5vtyk5ji4xg1knpory7x5th&st=871w7ddj&dl=1"
@@ -123,6 +124,8 @@ def tampilkan_prediksi():
             #                                 st.text(text_output)
             #                     elif output.output_type == 'error':
             #                         st.error('\n'.join(output.traceback))
+       
+       
        #--------------------------- INI UNTUK PREDIKSI
         with tab1:
             st.warning("""
