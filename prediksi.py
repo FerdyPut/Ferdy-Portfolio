@@ -89,40 +89,41 @@ def tampilkan_prediksi():
             DATA_PATH = "https://www.dropbox.com/scl/fi/xu266ivq58vdr9y01bzgo/churn-1.csv?rlkey=fj5vtyk5ji4xg1knpory7x5th&st=871w7ddj&dl=1"
             # -----------------------------------------
 
-            # Load notebook
-            response = requests.get(NOTEBOOK_PATH)
-            notebook = nbformat.reads(response.text, as_version=4)
+            # # Load notebook
+            # response = requests.get(NOTEBOOK_PATH)
+            # notebook = nbformat.reads(response.text, as_version=4)
 
-            # Load dataset
-            df = pd.read_csv(DATA_PATH)
+            # # Load dataset
+            # df = pd.read_csv(DATA_PATH)
 
-            # Tampil semua isi notebook
-            for idx, cell in enumerate(notebook.cells):
-                with st.expander(f"Cell {idx+1} - {cell.cell_type.capitalize()}", expanded=True):
-                    if cell.cell_type == 'markdown':
-                        st.markdown(cell.source)
-                    elif cell.cell_type == 'code':
-                        st.code(cell.source, language='python')
+            # # Tampil semua isi notebook
+            # for idx, cell in enumerate(notebook.cells):
+            #     with st.expander(f"Cell {idx+1} - {cell.cell_type.capitalize()}", expanded=True):
+            #         if cell.cell_type == 'markdown':
+            #             st.markdown(cell.source)
+            #         elif cell.cell_type == 'code':
+            #             st.code(cell.source, language='python')
                         
-                        if 'outputs' in cell:
-                            for output in cell.outputs:
-                                if output.output_type == 'stream':
-                                    st.text(output.text)
-                                elif output.output_type in ['execute_result', 'display_data']:
-                                    if 'image/png' in output.data:
-                                        image_data = base64.b64decode(output.data['image/png'])
-                                        image = Image.open(BytesIO(image_data))
-                                        st.image(image)
-                                    elif 'text/plain' in output.data:
-                                        text_output = output.data['text/plain']
-                                        # Deteksi output dataframe
-                                        if df is not None and "InvoiceNo" in text_output and "StockCode" in text_output:
-                                            st.success("Detected DataFrame output, showing real dataframe 👇")
-                                            st.dataframe(df.head(100))
-                                        else:
-                                            st.text(text_output)
-                                elif output.output_type == 'error':
-                                    st.error('\n'.join(output.traceback))
+            #             if 'outputs' in cell:
+            #                 for output in cell.outputs:
+            #                     if output.output_type == 'stream':
+            #                         st.text(output.text)
+            #                     elif output.output_type in ['execute_result', 'display_data']:
+            #                         if 'image/png' in output.data:
+            #                             image_data = base64.b64decode(output.data['image/png'])
+            #                             image = Image.open(BytesIO(image_data))
+            #                             st.image(image)
+            #                         elif 'text/plain' in output.data:
+            #                             text_output = output.data['text/plain']
+            #                             # Deteksi output dataframe
+            #                             if df is not None and "InvoiceNo" in text_output and "StockCode" in text_output:
+            #                                 st.success("Detected DataFrame output, showing real dataframe 👇")
+            #                                 st.dataframe(df.head(100))
+            #                             else:
+            #                                 st.text(text_output)
+            #                     elif output.output_type == 'error':
+            #                         st.error('\n'.join(output.traceback))
+       #--------------------------- INI UNTUK PREDIKSI
         with tab1:
             st.warning("""
                         Ini untuk tahapan uji coba prediksi Machine Learning menggunakan SVM Classifier pada data churn ketika
