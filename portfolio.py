@@ -179,6 +179,11 @@ elif st.session_state.main_menu == "Portofolio Project":
         import prediksi
         prediksi.tampilkan_prediksi()
 
+
+    # Show content for Machine Learning sub-menu
+    elif st.session_state.sub_menu == "Machine Learning - Diabetes Prediction":
+        "Coming Soon"
+
     else:
         st.info("Silakan pilih menu lain di sidebar.")
 
